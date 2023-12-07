@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block body_field %}
+    {% if articledetail %}
+        <h4>{{articledetail.title}}</h4>
+        <hr>
+        Yazar: {{articledetail.author}}
+        <hr>
+        Tarih: {{articledetail.created_date}}
+        <hr>
+        {{articledetail.content | safe}} <!--CKEditör verileri html formatında veri tabanına gönderdiği için biz de verileri alırken dönüştürüp alıyoruz.Onun için safe yazıldı.-->
+    {% else %}
+        <div class = "alert alert-warning"> Böyle bir makale bulunmuyor.</div>
+    {% endif %}
+
+
+
+{% endblock %}

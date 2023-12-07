@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body_field %} <!--Layout'u miras alanların body kısmını kendisine göre doldurması için Block yapısını kullandık.--> 
+{% from "includes/formhelpers.html" import render_field %}
+
+    <h3>Kayıt Ol</h3>
+    <hr>
+    <form method = "post">
+        {{ render_field(form.name,class = "form-control") }}<!--Form-control isimli bootstrap sınıfını eklemiş olduk.--> 
+        {{ render_field(form.username,class = "form-control") }}
+        {{ render_field(form.email,class = "form-control") }}
+        {{ render_field(form.password,class = "form-control") }}
+        {{ render_field(form.confirm,class = "form-control") }}
+        <button type="submit" class="btn btn-info">Kayıt Ol</button>
+    </form>
+
+{% endblock %}
